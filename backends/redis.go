@@ -115,6 +115,7 @@ func (o Redis) GetSuperuser(username string) bool {
 func (o Redis) CheckAcl(username, topic, clientid string, acc int32) bool {
 
 	//We need to check if client is subscribing or publishing to get correct acls.
+	log.Errorf("acc: %v\n", acc)
 
 	if acc == 1 {
 		//Subscribe
